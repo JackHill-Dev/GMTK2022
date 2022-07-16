@@ -7,7 +7,7 @@
 #include "EnemyAIController.generated.h"
 
 class UBehaviorTree;
-class APawn;
+
 /**
  * 
  */
