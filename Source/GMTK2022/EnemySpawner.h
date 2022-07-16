@@ -29,7 +29,7 @@ private:
 	TSubclassOf<AActor> EnemyToSpawn;
 
 	int EnemyCount = 0;
-	
+	float SpawnTimer = 0.f;
 	UPROPERTY(EditAnywhere)
 	int MaxEnemyCount = 10;
 

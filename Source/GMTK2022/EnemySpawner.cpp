@@ -16,7 +16,7 @@ void AEnemySpawner::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	SpawnEnemy();
+	//SpawnEnemy();
 }
 
 // Called every frame
@@ -24,19 +24,23 @@ void AEnemySpawner::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (EnemyCount < MaxEnemyCount)
+	SpawnTimer -= DeltaTime;
+
+	if (SpawnTimer <= 0.0f && EnemyCount < MaxEnemyCount)
 	{
 		SpawnEnemy();
-		
+		++EnemyCount;
+		SpawnTimer = 5.0f;
 	}
+	
 }
 
 void AEnemySpawner::SpawnEnemy()
-{
+{	
 	if (EnemyToSpawn)
 	{
 		GetWorld()->SpawnActor<AActor>(EnemyToSpawn, GetActorLocation(), GetActorRotation());
-		++EnemyCount;
+	
 	}
 }
 
