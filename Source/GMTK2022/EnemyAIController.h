@@ -17,6 +17,7 @@ class GMTK2022_API AEnemyAIController : public AAIController
 	GENERATED_BODY()
 	
 public:
+	~AEnemyAIController();
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 private:

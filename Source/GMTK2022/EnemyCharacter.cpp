@@ -35,5 +35,6 @@ void AEnemyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 void AEnemyCharacter::Explode()
 {
 	UE_LOG(LogTemp, Warning, TEXT("EnemyCharacter::Explode"));
+	Destroy();
 }
 

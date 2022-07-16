@@ -24,7 +24,7 @@ EBTNodeResult::Type UBTTask_Explode::ExecuteTask(UBehaviorTreeComponent& OwnerCo
     {
         return EBTNodeResult::Failed;
     }
-
+    
     Character->Explode();
 
     return EBTNodeResult::Succeeded;

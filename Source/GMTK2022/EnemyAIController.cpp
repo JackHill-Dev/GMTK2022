@@ -5,6 +5,15 @@
 #include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "EnemyCharacter.h"
+AEnemyAIController::~AEnemyAIController()
+{
+	BehaviorTree = nullptr;
+	delete BehaviorTree;
+
+	PlayerPawn = nullptr;
+	delete PlayerPawn;
+}
 void AEnemyAIController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -25,5 +34,7 @@ void AEnemyAIController::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	
 	GetBlackboardComponent()->SetValueAsVector(TEXT("PlayerLocation"), PlayerPawn->GetActorLocation());
-	
+
+
+
 }
